@@ -1,0 +1,48 @@
+# .gitignore für Unreal Engine 5 Projekte (RVPF)
+
+# -------------------------------------------------------------------------
+# Unreal Engine Core Ignore
+# -------------------------------------------------------------------------
+# Ignoriert temporäre Build-Dateien und kompilierte Binaries.
+Binaries/
+Plugins/*/Binaries/
+
+# Ignoriert den Zwischenspeicher für den Editor. Diese Dateien werden 
+# beim Starten automatisch neu generiert.
+DerivedDataCache/
+
+# Ignoriert kompilierte Quelldateien und temporäre Projektdateien.
+Intermediate/
+Plugins/*/Intermediate/
+
+# Ignoriert lokale Speicherstände, Logs, Autosaves und Crash-Reports.
+Saved/
+
+# Ignoriert gebaute Map-Daten (Lighting, etc.), da diese groß sind und neu gebacken werden.
+*_BuiltData.uasset
+
+# -------------------------------------------------------------------------
+# IDEs & Projektdateien (werden lokal generiert)
+# -------------------------------------------------------------------------
+*.sln
+*.suo
+*.opensdf
+*.sdf
+*.VC.db
+*.VC.opendb
+*.xcworkspace
+*.xcodeproj
+.idea/
+.vs/
+*.uuser
+
+# -------------------------------------------------------------------------
+# OS spezifische versteckte Dateien
+# -------------------------------------------------------------------------
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
