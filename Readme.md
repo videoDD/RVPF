@@ -87,19 +87,19 @@ The RVPF specification is platform-agnostic, with Unreal Engine 5 serving as the
 | RVPF Concept | Unreal Engine 5 Reference Construct | Pattern / DDD Role |
 | :--- | :--- | :--- |
 | **StudioObject** | `AActor` / `BP_StudioObjectBase` | Aggregate Root |
-| **StudioIdentity** | `FStudioIdentity` (`USTRUCT`) | Value Object[cite: 1, 3] |
-| **StudioLifecycle** | `UStudioLifecycleComponent` | State Pattern[cite: 1, 3] |
-| **StudioCapability** | `UBPI_Capability` / `UStudioCapabilityComponent`[cite: 1, 3] | Strategy / Contract Interface[cite: 1, 3] |
-| **StudioImpulse** | `FStudioImpulse` (`USTRUCT`)[cite: 1, 3] | Data Transfer Object (DTO)[cite: 1, 3] |
-| **Public Interface** | `UBPI_StudioObject` (`UInterface`)[cite: 1, 3] | Facade / Port Interface[cite: 1, 3] |
-| **Context Resolver** | `UContextManagerSubsystem`[cite: 1, 3] | Mediator / Broker Pattern[cite: 1, 5] |
-| **Master Timeline Authority** | `ULevelSequencePlayer` & `UTakeRecorder` | Temporal Master Clock[cite: 1] |
-| **Protocol Adapters** | `UDMXComponent`, `ULiveLinkComponent`, `UMidiComponent`[cite: 1, 3] | Adapter Pattern[cite: 1, 3] |
+| **StudioIdentity** | `FStudioIdentity` (`USTRUCT`) | Value Object |
+| **StudioLifecycle** | `UStudioLifecycleComponent` | State Pattern |
+| **StudioCapability** | `UBPI_Capability` / `UStudioCapabilityComponent` | Strategy / Contract Interface |
+| **StudioImpulse** | `FStudioImpulse` (`USTRUCT`) | Data Transfer Object (DTO) |
+| **Public Interface** | `UBPI_StudioObject` (`UInterface`) | Facade / Port Interface |
+| **Context Resolver** | `UContextManagerSubsystem` | Mediator / Broker Pattern |
+| **Master Timeline Authority** | `ULevelSequencePlayer` & `UTakeRecorder` | Temporal Master Clock |
+| **Protocol Adapters** | `UDMXComponent`, `ULiveLinkComponent`, `UMidiComponent` | Adapter Pattern |
 
 ---
 
 ## 🚀 Reference Production Validation (`UC-001: The Cave Torch`)
-The framework architecture is formally validated via the canonical end-to-end reference production scenario[cite: 1, 3]:
+The framework architecture is formally validated via the canonical end-to-end reference production scenario:
 
 ```text
 [Vive Mars Rover Pose] ───► Ingestion (IL-001) ───► FStudioImpulse ───► BP_StudioObject (Torch)
@@ -123,8 +123,8 @@ The framework architecture is formally validated via the canonical end-to-end re
 ```
 
 ## 🤝 Research, Governance & Community
-RVPF is developed as an open research and educational platform at the intersection of media engineering, computer science, and virtual production[cite: 1].
+RVPF is developed as an open research and educational platform at the intersection of media engineering, computer science, and virtual production.
 
-* **Governance:** Specification changes follow strict semantic versioning and artifact lifecycle rules defined in `GOV-001`[cite: 1].
-* **Traceability:** Every domain entity directly traces back to the normative Core Principles in `CS-001` and formal ADRs[cite: 1].
+* **Governance:** Specification changes follow strict semantic versioning and artifact lifecycle rules defined in `GOV-001`.
+* **Traceability:** Every domain entity directly traces back to the normative Core Principles in `CS-001` and formal ADRs.
 * **Contributions:** Inquiries, academic collaborations, and pull requests regarding adapters or target runtimes are welcome.

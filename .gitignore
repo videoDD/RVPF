@@ -1,48 +1,83 @@
-# .gitignore für Unreal Engine 5 Projekte (RVPF)
+# ==============================================================================
+# RVPF Repository .gitignore
+# Covers: Unreal Engine 5 Reference Implementation, OS, IDEs & Documentation
+# ==============================================================================
 
-# -------------------------------------------------------------------------
-# Unreal Engine Core Ignore
-# -------------------------------------------------------------------------
-# Ignoriert temporäre Build-Dateien und kompilierte Binaries.
-Binaries/
-Plugins/*/Binaries/
+# ------------------------------------------------------------------------------
+# 1. Unreal Engine Temporary & Generated Folders
+# ------------------------------------------------------------------------------
+**/Binaries/
+**/Build/
+**/DerivedDataCache/
+**/Intermediate/
+**/Saved/
+**/.vs/
+**/.idea/
+**/.vscode/
 
-# Ignoriert den Zwischenspeicher für den Editor. Diese Dateien werden 
-# beim Starten automatisch neu generiert.
-DerivedDataCache/
-
-# Ignoriert kompilierte Quelldateien und temporäre Projektdateien.
-Intermediate/
-Plugins/*/Intermediate/
-
-# Ignoriert lokale Speicherstände, Logs, Autosaves und Crash-Reports.
-Saved/
-
-# Ignoriert gebaute Map-Daten (Lighting, etc.), da diese groß sind und neu gebacken werden.
-*_BuiltData.uasset
-
-# -------------------------------------------------------------------------
-# IDEs & Projektdateien (werden lokal generiert)
-# -------------------------------------------------------------------------
+# Unreal Project Configuration & Source Files
+*.VC.db
+*.opensdf
+*.opendb
+*.sdf
 *.sln
 *.suo
-*.opensdf
-*.sdf
-*.VC.db
-*.VC.opendb
-*.xcworkspace
 *.xcodeproj
-.idea/
-.vs/
-*.uuser
+*.xcworkspace
 
-# -------------------------------------------------------------------------
-# OS spezifische versteckte Dateien
-# -------------------------------------------------------------------------
+# Unreal Package / Build Artifacts
+**/Plugins/*/Intermediate/
+**/Plugins/*/Binaries/
+**/RVPF_UE/Saved/
+**/RVPF_UE/Intermediate/
+**/RVPF_UE/DerivedDataCache/
+**/RVPF_UE/Binaries/
+
+# ------------------------------------------------------------------------------
+# 2. Operating System Specific
+# ------------------------------------------------------------------------------
+# macOS
 .DS_Store
-.DS_Store?
+.AppleDouble
+.LSOverride
 ._*
 .Spotlight-V100
 .Trashes
-ehthumbs.db
+
+# Windows
 Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Linux
+*~
+.fuse_hidden*
+.directory
+
+# ------------------------------------------------------------------------------
+# 3. Editors, IDEs & Documentation Tools (Obsidian, VSCode, Rider)
+# ------------------------------------------------------------------------------
+# Obsidian Workspace Layout (exclude local UI state, keep notes)
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+.obsidian/graph.json
+
+# JetBrains / Rider
+.idea/
+
+# Visual Studio Code
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# ------------------------------------------------------------------------------
+# 4. Binary Assets & Crash Logs
+# ------------------------------------------------------------------------------
+*.log
+*.dmp
+*.crash
+*.tmp
+*.bak
