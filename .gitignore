@@ -28,10 +28,10 @@
 # Unreal Package / Build Artifacts
 **/Plugins/*/Intermediate/
 **/Plugins/*/Binaries/
-**/RVPF_UE/Saved/
-**/RVPF_UE/Intermediate/
-**/RVPF_UE/DerivedDataCache/
-**/RVPF_UE/Binaries/
+**/rvpfDemoGame/Saved/
+**/rvpfDemoGame/Intermediate/
+**/rvpfDemoGame/DerivedDataCache/
+**/rvpfDemoGame/Binaries/
 
 # ------------------------------------------------------------------------------
 # 2. Operating System Specific
