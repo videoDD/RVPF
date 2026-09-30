@@ -87,8 +87,6 @@ The RVPF is currently in **Alpha Status**. The core architecture is fully specif
 
 ## 📂 Repository Structure & Artifact Inventory
 
-Plaintext
-
 ```
 RVPF/
 ├── adrs/                                      # Architecture Decision Records
@@ -128,23 +126,21 @@ RVPF/
 
 The RVPF specification is platform-agnostic, with Unreal Engine 5 serving as the primary reference implementation:
 
-|**RVPF Concept**|**Unreal Engine 5 Reference Construct**|**Pattern / DDD Role**|
-|---|---|---|
-|**StudioObject**|`AActor` / `BP_StudioObjectBase`|Aggregate Root|
-|**StudioIdentity**|`FStudioIdentity` (`USTRUCT`)|Value Object|
-|**StudioLifecycle**|`UStudioLifecycleComponent`|State Pattern|
-|**StudioCapability**|`UBPI_Capability` / `UStudioCapabilityComponent`|Strategy / Contract Interface|
-|**StudioImpulse**|`FStudioImpulse` (`USTRUCT`)|Data Transfer Object (DTO)|
-|**Public Interface**|`UBPI_StudioObject` (`UInterface`)|Facade / Port Interface|
-|**Context Resolver**|`UContextManagerSubsystem`|Mediator / Broker Pattern|
-|**Master Timeline Authority**|`ULevelSequencePlayer` & `UTakeRecorder`|Temporal Master Clock|
-|**Protocol Adapters**|`UDMXComponent`, `ULiveLinkComponent`, `UMidiComponent`|Adapter Pattern|
+| **RVPF Concept**              | **Unreal Engine 5 Reference Construct**                 | **Pattern / DDD Role**        |
+| ----------------------------- | ------------------------------------------------------- | ----------------------------- |
+| **StudioObject**              | `AActor` / `BP_StudioObjectBase`                        | Aggregate Root                |
+| **StudioIdentity**            | `FStudioIdentity` (`USTRUCT`)                           | Value Object                  |
+| **StudioLifecycle**           | `UStudioLifecycleComponent`                             | State Pattern                 |
+| **StudioCapability**          | `UBPI_Capability` / `UStudioCapabilityComponent`        | Strategy / Contract Interface |
+| **StudioImpulse**             | `FStudioImpulse` (`USTRUCT`)                            | Data Transfer Object (DTO)    |
+| **Public Interface**          | `UBPI_StudioObject` (`UInterface`)                      | Facade / Port Interface       |
+| **Context Resolver**          | `UContextManagerSubsystem`                              | Mediator / Broker Pattern     |
+| **Master Timeline Authority** | `ULevelSequencePlayer` & `UTakeRecorder`                | Temporal Master Clock         |
+| **Protocol Adapters**         | `UDMXComponent`, `ULiveLinkComponent`, `UMidiComponent` | Adapter Pattern               |
 
 ## 🔬 Reference Production Validation (UC-001: The Cave Torch)
 
 The framework architecture is formally validated via the canonical end-to-end reference production scenario:
-
-Plaintext
 
 ```
 [Vive Mars Rover Pose] ───► Ingestion (IL-001) ───► FStudioImpulse ───► BP_StudioObject (Torch)
