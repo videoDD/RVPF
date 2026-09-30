@@ -34,11 +34,11 @@ flowchart LR
 ```
 ### Core Architectural Pillars
 
-1. **Semantic Neutrality of Impulses (ADR-002):** Incoming signals are ingested as raw, normalized `FStudioImpulse` packages carrying zero inherent domain logic.
+1. **Semantic Neutrality of Impulses ([[adr-002]]):** Incoming signals are ingested as raw, normalized `FStudioImpulse` packages carrying zero inherent domain logic.
     
-2. **Context Determines Meaning (DM-PRD-001, DM-CTX-001):** Telemetry acquires meaning exclusively when evaluated against the active dramatic state (Scene, Shot, Take) and spatial/environmental context.
+2. **Context Determines Meaning ([[DM-PRD-001_ProductionModel]], [[DM-CTX-001_contextModel]]):** Telemetry acquires meaning exclusively when evaluated against the active dramatic state (Scene, Shot, Take) and spatial/environmental context.
     
-3. **Events Arise from State Transitions (ADR-003, DM-STM-001):** High-frequency data streams update state metrics; formal domain events fire strictly upon discrete state boundary crossings, eliminating event flooding.
+3. **Events Arise from State Transitions ([[adr-003]], [[DM-STM-001_stateModel]]):** High-frequency data streams update state metrics; formal domain events fire strictly upon discrete state boundary crossings, eliminating event flooding.
     
 4. **StudioObject Aggregate Root & Capabilities (ADR-001, DM-OBJ-001, DM-CAP-001):** Entities model _what they can do_ (Emit, Capture, Track, Interact) rather than _what they are_, while protocol adapters (`StudioComponent`) handle hardware I/O.
     
